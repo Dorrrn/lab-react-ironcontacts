@@ -7,15 +7,32 @@ function App() {
   const [contacts, setContacts] = useState(fiveContacts);
 
   const addRandomContact = () => {
-    const randomIndex = Math.floor(Math.random()* contactsArr.length);
+    const randomIndex = Math.floor(Math.random() * contactsArr.length);
     const randomContact = contactsArr[randomIndex];
-    setContacts([randomContact, ...contacts])
-  }
+    setContacts([randomContact, ...contacts]);
+  };
+
+  const sortByName = () => {
+    const sortedContacts = contactsArr.sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+    setContacts([...sortedContacts]);
+  };
+
+  const sortByPop = () => {
+    const sortedContacts = contactsArr.sort((a, b) => {
+      return b.popularity - a.popularity;
+    });
+    setContacts([...sortedContacts]);
+  };
 
   return (
     <div className="App">
       <h1>Iron Contacts</h1>
-      <button onClick={ addRandomContact }>Add random contact</button>
+      <button onClick={addRandomContact}>Add random contact</button>
+      <button onClick={sortByName}>Sort by name</button>
+      <button onClick={sortByPop}>Sort by popularity</button>
+
       <table>
         <tr>
           <th>Picture</th>
@@ -35,7 +52,7 @@ function App() {
                 />
               </td>
               <td>{contact.name}</td>
-              <td>{Math.round(contact.popularity * 100 )/100}</td>
+              <td>{Math.round(contact.popularity * 100) / 100}</td>
               <td>{contact.wonOscar && <p>🏆</p>} </td>
               <td>{contact.wonEmmy && <p>🏆</p>} </td>
             </tr>
