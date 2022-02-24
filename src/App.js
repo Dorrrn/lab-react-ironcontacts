@@ -3,13 +3,18 @@ import "./App.css";
 import contactsArr from "./contacts.json";
 
 function App() {
-  let fiveContacts = contactsArr.slice(0, 5);
-  const [contacts, setContacts] = useState(fiveContacts);
+  const [contacts, setContacts] = useState(contactsArr.slice(0, 5));
 
   const addRandomContact = () => {
-    const randomIndex = Math.floor(Math.random() * contactsArr.length);
+    const displayedContacts = [...contacts];
+    const randomIndex = Math.floor(Math.random() * (contactsArr.length - 1));
     const randomContact = contactsArr[randomIndex];
-    setContacts([randomContact, ...contacts]);
+
+    if (!displayedContacts.includes(randomContact)) {
+      setContacts([randomContact, ...displayedContacts]);
+    } else {
+      addRandomContact();
+    }
   };
 
   const sortByName = () => {
