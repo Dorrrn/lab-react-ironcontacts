@@ -13,14 +13,16 @@ function App() {
   };
 
   const sortByName = () => {
-    const sortedContacts = contactsArr.sort((a, b) => {
+    const sortedContacts = [...contacts];
+    sortedContacts.sort((a, b) => {
       return a.name.localeCompare(b.name);
     });
     setContacts(sortedContacts);
   };
 
   const sortByPop = () => {
-    const sortedContacts = contactsArr.sort((a, b) => {
+    const sortedContacts = [...contacts];
+    sortedContacts.sort((a, b) => {
       return b.popularity - a.popularity;
     });
     setContacts(sortedContacts);

@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(100, 92, 92);
 }
 
 .App-link {
@@ -42,7 +42,7 @@
 }
 
 .navbar {
-  background-color: rgb(202, 158, 103);
+  background-color: rgb(12, 113, 105);
   padding: 1rem;
   top: 0;
   position: fixed;
@@ -51,7 +51,7 @@
 
 .main-content {
   padding: 7rem 2rem;
-  background-color: rgb(229, 228, 227);
+  background-color: rgb(244, 242, 240);
   align-content: center;
 }
 
@@ -62,20 +62,24 @@
 .center-table {
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(255, 220, 220);
+  background-color: rgb(246, 246, 215);
   padding: 2rem;
 }
 
 .table-head {
   background-color: #395c66;
-  color: white;
 }
+
 
 button {
   border-radius: 5px;
   padding: 10px 20px;
   margin: 5px;
   border: none;
-  background-color: #5a3f6e;
+  background-color: #dea112;
   color: white;
+}
+
+th, td {
+  color: black
 }
